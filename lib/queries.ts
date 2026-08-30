@@ -79,6 +79,16 @@ export async function getCaseSources(caseId: string) {
     .orderBy(asc(caseSources.sortOrder));
 }
 
+export const POINTS_PER_CORRECT_CALL = 100;
+
+export async function getOwnSuggestions(userId: string) {
+  return getDb()
+    .select()
+    .from(schema.caseSuggestions)
+    .where(eq(schema.caseSuggestions.userId, userId))
+    .orderBy(desc(schema.caseSuggestions.createdAt));
+}
+
 export async function getCaseComments(caseId: string, limit = 5) {
   return getDb()
     .select()

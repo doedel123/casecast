@@ -270,6 +270,29 @@ export const caseFollows = pgTable(
   (t) => [uniqueIndex("case_follows_user_case_unique").on(t.userId, t.caseId)],
 );
 
+// Member-submitted case ideas, reviewed by editors. A published suggestion
+// earns the member $1 membership credit per new member acquired through it
+// (calculated manually each month; see terms).
+export const caseSuggestions = pgTable(
+  "case_suggestions",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    caseName: text("case_name").notNull(),
+    court: text("court"),
+    reason: text("reason"),
+    sourceUrl: text("source_url"),
+    status: text("status").notNull().default("pending"),
+    adminNote: text("admin_note"),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (t) => [index("case_suggestions_user_idx").on(t.userId)],
+);
+
 // Curated, admin-managed discussion entries shown as a teaser on case pages.
 // There is no public write path — open commenting stays off per editorial policy.
 export const caseComments = pgTable(

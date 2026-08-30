@@ -7,8 +7,9 @@ import {
   Check,
   FileClock,
   HeartHandshake,
+  Lightbulb,
+  Target,
   Trophy,
-  UserRound,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
@@ -29,13 +30,22 @@ export const metadata: Metadata = {
 };
 
 const BENEFITS = [
-  { icon: BarChart3, text: "Personal prediction history" },
-  { icon: Trophy, text: "Accuracy score across resolved cases" },
+  { icon: BarChart3, text: "Personal prediction history & accuracy score" },
+  {
+    icon: Target,
+    text: "Forecast points for every verdict you call correctly",
+  },
+  {
+    icon: Lightbulb,
+    text: "Suggest new cases — earn $1 membership credit for every new member your case brings in",
+  },
   { icon: BookmarkCheck, text: "Save cases and follow them" },
   { icon: Bell, text: "Notifications when verdicts come in" },
   { icon: FileClock, text: "Detailed case timelines and sources" },
-  { icon: UserRound, text: "Member profile" },
-  { icon: Trophy, text: "Seasonal leaderboards (coming later)" },
+  {
+    icon: Trophy,
+    text: "Seasonal leaderboards — recognition for the season's best forecasters",
+  },
 ];
 
 export default async function MembershipPage({
@@ -144,8 +154,10 @@ export default async function MembershipPage({
       <section className="mt-6 space-y-2 px-1 text-[12.5px] leading-relaxed text-muted-foreground">
         <p>
           Fair play: membership never gives your prediction extra weight and
-          never affects the public forecast. Call the Case has no prizes, no odds
-          and no wagering — predictions are free for everyone.
+          never affects the public forecast. Call the Case involves no wagering
+          and no odds — predictions are free for everyone, and forecast points
+          and leaderboard recognition carry no monetary value. Referral credit
+          for suggested cases is subscription credit, not a prize or payout.
         </p>
         <p>
           Your membership payment goes to Call the Case, which makes the donations

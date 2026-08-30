@@ -51,6 +51,27 @@ export default function TermsPage() {
           revenue. Your membership payment is not a tax-deductible charitable
           contribution.
         </li>
+        <li>
+          <strong>Case suggestions:</strong> members may suggest cases for
+          coverage. Our editors decide freely, under our editorial policy,
+          whether and how a suggested case is covered. Suggesting a case
+          creates no entitlement to coverage or compensation.
+        </li>
+        <li>
+          <strong>Referral credit:</strong> when a case you suggested is
+          published and a new member joins through that case, we add $1 (USD)
+          of subscription credit to your membership. Credit is calculated
+          monthly at our reasonable discretion based on our attribution
+          records, is applied to future invoices, has no cash value, is not
+          paid out, and may be withheld in cases of self-referral or
+          manipulation.
+        </li>
+        <li>
+          <strong>Forecast points:</strong> points and leaderboard placements
+          are recognition only. They have no monetary value, cannot be bought,
+          and are earned through predictions — which remain free for everyone,
+          member or not.
+        </li>
       </ul>
 
       <h2>Accounts</h2>

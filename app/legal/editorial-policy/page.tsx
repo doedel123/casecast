@@ -74,8 +74,11 @@ export default function EditorialPolicyPage() {
       <h2>Fair play</h2>
       <p>
         Voting is free. Paid membership never adds weight to a vote, never
-        reveals results early, and offers no prizes, odds, or winnings of any
-        kind.
+        reveals results early, and involves no wagering, odds, or winnings of
+        monetary value. Forecast points and seasonal leaderboard recognition
+        have no cash value. Member-suggested cases go through the same
+        editorial review as any other case — suggesting a case buys no
+        influence over how it is covered.
       </p>
     </LegalShell>
   );

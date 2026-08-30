@@ -4,6 +4,7 @@ import { auth } from "@/lib/auth";
 
 const TABS = [
   { href: "/admin", label: "Cases" },
+  { href: "/admin/suggestions", label: "Suggestions" },
   { href: "/admin/settings", label: "Charity & donations" },
   { href: "/admin/votes", label: "Vote review" },
   { href: "/admin/audit", label: "Audit log" },

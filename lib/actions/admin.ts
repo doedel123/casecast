@@ -304,6 +304,21 @@ export async function resolveCase(formData: FormData) {
   redirect(`/admin/cases/${caseId}?saved=1`);
 }
 
+export async function setSuggestionStatus(
+  suggestionId: string,
+  status: "pending" | "accepted" | "declined",
+) {
+  const admin = await requireAdmin();
+  await getDb()
+    .update(schema.caseSuggestions)
+    .set({ status })
+    .where(eq(schema.caseSuggestions.id, suggestionId));
+  await audit(admin.id, `suggestion.${status}`, "case_suggestion", suggestionId);
+  revalidatePath("/admin/suggestions");
+  revalidatePath("/account");
+  redirect("/admin/suggestions?saved=1");
+}
+
 const donationSchema = z.object({
   mode: z.enum(["fixed_per_membership", "percent_revenue", "net_proceeds"]),
   fixedDollars: z.coerce.number().min(0).max(7.99).default(1),

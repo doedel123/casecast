@@ -6,9 +6,11 @@ import {
   CircleCheck,
   CircleX,
   Hourglass,
+  Lightbulb,
   Lock,
   Sparkles,
 } from "lucide-react";
+import { SuggestCaseForm } from "@/components/account/suggest-case-form";
 import { StatusBadge } from "@/components/status-badge";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -19,9 +21,11 @@ import { formatDate } from "@/lib/format";
 import {
   computeAccuracy,
   getFollowedCases,
+  getOwnSuggestions,
   getPredictionHistory,
   getSubscription,
   isMember,
+  POINTS_PER_CORRECT_CALL,
 } from "@/lib/queries";
 import { stripeConfigured, syncSubscriptionsForUser } from "@/lib/stripe";
 
@@ -53,8 +57,11 @@ export default async function AccountPage({
     getSubscription(user.id),
     getPredictionHistory(user.id),
   ]);
-  const followed = member ? await getFollowedCases(user.id) : [];
+  const [followed, suggestions] = member
+    ? await Promise.all([getFollowedCases(user.id), getOwnSuggestions(user.id)])
+    : [[], []];
   const accuracy = computeAccuracy(history);
+  const points = accuracy.correctCount * POINTS_PER_CORRECT_CALL;
 
   return (
     <div className="mx-auto w-full max-w-xl px-4 py-8 md:py-10">
@@ -136,7 +143,7 @@ export default async function AccountPage({
 
         {member ? (
           <>
-            <div className="mt-4 grid grid-cols-3 gap-3">
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[
                 { label: "Predictions", value: String(history.length) },
                 { label: "Resolved", value: String(accuracy.resolvedCount) },
@@ -144,6 +151,7 @@ export default async function AccountPage({
                   label: "Accuracy",
                   value: accuracy.pct === null ? "—" : `${accuracy.pct}%`,
                 },
+                { label: "Points", value: points.toLocaleString("en-US") },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -223,6 +231,72 @@ export default async function AccountPage({
                 Call the Case Membership
               </Link>
               .
+            </p>
+          </div>
+        )}
+      </section>
+
+      {/* Suggest a case */}
+      <section className="mt-5 rounded-3xl border border-border/80 bg-card p-5 shadow-[var(--shadow-card)] md:p-6">
+        <div className="flex items-center gap-2">
+          <Lightbulb className="h-4 w-4 text-primary" />
+          <h2 className="text-[13px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            Suggest a case
+          </h2>
+        </div>
+        {member ? (
+          <>
+            <p className="mt-2 mb-4 text-[13.5px] leading-relaxed text-foreground/75">
+              Know a public trial we should cover? If our editors publish your
+              suggestion, you earn{" "}
+              <span className="font-semibold text-foreground">
+                $1 membership credit
+              </span>{" "}
+              for every new member who joins through that case.
+            </p>
+            <SuggestCaseForm />
+            {suggestions.length > 0 && (
+              <ul className="mt-4 space-y-2 border-t border-border/70 pt-4">
+                {suggestions.map((s) => (
+                  <li
+                    key={s.id}
+                    className="flex items-center justify-between gap-3 rounded-xl border border-border/70 px-3.5 py-2.5"
+                  >
+                    <span className="truncate text-[13.5px] font-medium">
+                      {s.caseName}
+                    </span>
+                    <span
+                      className={
+                        s.status === "accepted"
+                          ? "shrink-0 rounded-full bg-result-green/12 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-result-green"
+                          : s.status === "declined"
+                            ? "shrink-0 rounded-full bg-result-slate/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-result-slate"
+                            : "shrink-0 rounded-full bg-result-amber/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-result-amber"
+                      }
+                    >
+                      {s.status === "accepted"
+                        ? "Accepted"
+                        : s.status === "declined"
+                          ? "Declined"
+                          : "In review"}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </>
+        ) : (
+          <div className="mt-3 flex items-start gap-3 rounded-2xl border border-border bg-muted/50 px-4 py-4">
+            <Lock className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
+            <p className="text-[13.5px] leading-relaxed text-muted-foreground">
+              Members can suggest cases for coverage — and earn $1 membership
+              credit for every new member their case brings in.{" "}
+              <Link
+                href="/membership"
+                className="font-medium text-foreground underline underline-offset-2"
+              >
+                Learn more
+              </Link>
             </p>
           </div>
         )}

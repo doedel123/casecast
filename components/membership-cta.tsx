@@ -1,11 +1,17 @@
 import Link from "next/link";
-import { BarChart3, Bell, BookmarkCheck, HeartHandshake } from "lucide-react";
+import { BarChart3, BookmarkCheck, HeartHandshake, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const PERKS = [
-  { icon: BarChart3, text: "Personal prediction history & accuracy score" },
-  { icon: BookmarkCheck, text: "Save cases and follow them to the verdict" },
-  { icon: Bell, text: "Alerts when a verdict comes in" },
+  {
+    icon: BarChart3,
+    text: "Prediction history, accuracy score & forecast points",
+  },
+  {
+    icon: Lightbulb,
+    text: "Suggest cases — earn credit when they draw new members",
+  },
+  { icon: BookmarkCheck, text: "Follow cases and get verdict alerts" },
 ];
 
 export function MembershipCta({ donationLine }: { donationLine: string }) {
