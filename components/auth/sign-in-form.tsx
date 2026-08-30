@@ -53,7 +53,7 @@ export function SignInForm({ next }: { next?: string }) {
         {isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : "Sign in"}
       </Button>
       <p className="text-center text-[13px] text-muted-foreground">
-        New to CaseCast?{" "}
+        New to Call the Case?{" "}
         <Link
           href={next ? `/signup?next=${encodeURIComponent(next)}` : "/signup"}
           className="font-medium text-foreground underline underline-offset-2"

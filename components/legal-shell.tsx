@@ -13,7 +13,7 @@ export function LegalShell({
       <p className="mt-1.5 text-[12.5px] text-muted-foreground">
         Last updated {updated}
       </p>
-      <div className="prose-casecast mt-6 space-y-5 text-[14.5px] leading-relaxed text-foreground/85 [&_h2]:font-serif [&_h2]:text-xl [&_h2]:tracking-tight [&_h2]:text-foreground [&_h2]:mt-7 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5">
+      <div className="prose-legal mt-6 space-y-5 text-[14.5px] leading-relaxed text-foreground/85 [&_h2]:font-serif [&_h2]:text-xl [&_h2]:tracking-tight [&_h2]:text-foreground [&_h2]:mt-7 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5">
         {children}
       </div>
     </div>

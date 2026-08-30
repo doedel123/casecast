@@ -51,7 +51,8 @@ export function MobileMenu({
       <SheetContent side="left" className="w-72 bg-background">
         <SheetHeader className="pb-0">
           <SheetTitle className="text-left font-serif text-xl tracking-tight">
-            Case<span className="text-primary">Cast</span>
+            Call<span className="font-normal italic text-foreground/55"> the </span>
+            <span className="text-primary">Case</span>
           </SheetTitle>
         </SheetHeader>
         <nav className="flex flex-col gap-1 px-4">

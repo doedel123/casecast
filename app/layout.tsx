@@ -26,13 +26,13 @@ export const metadata: Metadata = {
         : "http://localhost:3000"),
   ),
   title: {
-    default: "CaseCast — Follow the verdict",
-    template: "%s · CaseCast",
+    default: "Call the Case — Follow the verdict",
+    template: "%s · Call the Case",
   },
   description:
     "Public opinion forecasts on high-profile court cases. Cast your prediction, see how the public leans, and follow cases through to the verdict.",
   openGraph: {
-    title: "CaseCast — Follow the verdict",
+    title: "Call the Case — Follow the verdict",
     description:
       "Public opinion forecasts on high-profile court cases. Predictions, not findings of guilt.",
     images: ["/og.png"],

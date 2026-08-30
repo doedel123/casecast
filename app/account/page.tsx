@@ -61,7 +61,7 @@ export default async function AccountPage({
       {welcome === "1" && (
         <p className="mb-5 flex items-center gap-2 rounded-xl border border-result-green/30 bg-result-green/10 px-4 py-3 text-[13.5px] font-medium text-foreground/85">
           <Sparkles className="h-4 w-4 text-result-green" />
-          Welcome to CaseCast Membership — thank you for supporting the cause.
+          Welcome to Call the Case Membership — thank you for supporting the cause.
         </p>
       )}
 
@@ -87,7 +87,7 @@ export default async function AccountPage({
         {member ? (
           <div className="mt-3 space-y-3">
             <p className="text-[14.5px] text-foreground/85">
-              CaseCast Membership · $7.99/month
+              Call the Case Membership · $7.99/month
               {subscription?.currentPeriodEnd && (
                 <span className="text-muted-foreground">
                   {" "}
@@ -220,7 +220,7 @@ export default async function AccountPage({
                 href="/membership"
                 className="font-medium text-foreground underline underline-offset-2"
               >
-                CaseCast Membership
+                Call the Case Membership
               </Link>
               .
             </p>

@@ -10,7 +10,7 @@ function secret() {
   if (!value && process.env.NODE_ENV === "production") {
     throw new Error("AUTH_SECRET must be set in production.");
   }
-  return value ?? "casecast-dev-secret";
+  return value ?? "callthecase-dev-secret";
 }
 
 function sign(id: string) {

@@ -36,7 +36,7 @@ export async function getMembershipPriceId(stripe: Stripe): Promise<string> {
   });
   if (existing.data[0]) return existing.data[0].id;
   const product = await stripe.products.create({
-    name: "CaseCast Membership",
+    name: "Call the Case Membership",
     description:
       "Prediction history, accuracy score, followed cases and verdict alerts. Cancel anytime.",
   });
@@ -59,7 +59,7 @@ export async function ensureStripeCustomer(user: {
   const stripe = getStripe();
   const customer = await stripe.customers.create({
     email: user.email,
-    metadata: { casecastUserId: user.id },
+    metadata: { appUserId: user.id },
   });
   await getDb()
     .update(schema.users)

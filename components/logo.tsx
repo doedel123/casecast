@@ -6,12 +6,13 @@ export function Logo({ className }: { className?: string }) {
     <Link
       href="/"
       className={cn(
-        "font-serif text-[1.35rem] font-semibold tracking-tight text-foreground",
+        "font-serif text-[1.3rem] font-semibold tracking-tight text-foreground",
         className,
       )}
-      aria-label="CaseCast home"
+      aria-label="Call the Case home"
     >
-      Case<span className="text-primary">Cast</span>
+      Call<span className="font-normal italic text-foreground/55"> the </span>
+      <span className="text-primary">Case</span>
       <span className="ml-1 inline-block h-1.5 w-1.5 rounded-full bg-primary align-[0.12em]" />
     </Link>
   );

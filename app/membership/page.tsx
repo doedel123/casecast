@@ -25,7 +25,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Membership",
   description:
-    "CaseCast Membership — $7.99/month. Prediction history, accuracy score, followed cases and verdict alerts. Cancel anytime.",
+    "Call the Case Membership — $7.99/month. Prediction history, accuracy score, followed cases and verdict alerts. Cancel anytime.",
 };
 
 const BENEFITS = [
@@ -64,7 +64,7 @@ export default async function MembershipPage({
 
       <header className="space-y-2 text-center">
         <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
-          CaseCast Membership
+          Call the Case Membership
         </p>
         <h1 className="font-serif text-3xl leading-tight md:text-4xl">
           Follow the verdict. Track your predictions. Support a cause.
@@ -144,11 +144,11 @@ export default async function MembershipPage({
       <section className="mt-6 space-y-2 px-1 text-[12.5px] leading-relaxed text-muted-foreground">
         <p>
           Fair play: membership never gives your prediction extra weight and
-          never affects the public forecast. CaseCast has no prizes, no odds
+          never affects the public forecast. Call the Case has no prizes, no odds
           and no wagering — predictions are free for everyone.
         </p>
         <p>
-          Your membership payment goes to CaseCast, which makes the donations
+          Your membership payment goes to Call the Case, which makes the donations
           described above; the payment itself is not a tax-deductible
           charitable contribution.
         </p>

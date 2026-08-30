@@ -1,6 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="14" fill="#E85D4A"/>
-  <rect x="14" y="17" width="36" height="7" rx="3.5" fill="#FFFCF9"/>
-  <rect x="14" y="29" width="26" height="7" rx="3.5" fill="#FFFCF9" opacity="0.85"/>
-  <rect x="14" y="41" width="17" height="7" rx="3.5" fill="#FFFCF9" opacity="0.7"/>
+  <path d="M32 10 L55 24 H9 Z" fill="#FFFCF9"/>
+  <rect x="12" y="27" width="40" height="4.5" rx="2.25" fill="#FFFCF9"/>
+  <rect x="14" y="35" width="5.5" height="15" rx="2.5" fill="#FFFCF9" opacity="0.92"/>
+  <rect x="24.8" y="35" width="5.5" height="15" rx="2.5" fill="#FFFCF9" opacity="0.92"/>
+  <rect x="35.6" y="35" width="5.5" height="15" rx="2.5" fill="#FFFCF9" opacity="0.92"/>
+  <rect x="46.4" y="35" width="5.5" height="15" rx="2.5" fill="#FFFCF9" opacity="0.92"/>
+  <rect x="11" y="53" width="42" height="4.5" rx="2.25" fill="#FFFCF9"/>
 </svg>

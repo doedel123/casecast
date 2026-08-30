@@ -22,7 +22,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Impact",
   description:
-    "How CaseCast membership revenue turns into donations — charity, calculation method and every transferred amount.",
+    "How Call the Case membership revenue turns into donations — charity, calculation method and every transferred amount.",
 };
 
 export default async function ImpactPage() {
@@ -141,7 +141,7 @@ export default async function ImpactPage() {
       </section>
 
       <p className="mt-8 text-[12.5px] leading-relaxed text-muted-foreground">
-        CaseCast is not a charity. Your membership payment goes to CaseCast,
+        Call the Case is not a charity. Your membership payment goes to Call the Case,
         which makes the donations listed above — the payment itself is not a
         tax-deductible charitable contribution. Questions? See our{" "}
         <Link href="/legal/terms" className="underline underline-offset-2">

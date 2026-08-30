@@ -7,7 +7,7 @@ export default function EditorialPolicyPage() {
   return (
     <LegalShell title="Editorial policy" updated="August 30, 2026">
       <p>
-        CaseCast publishes public opinion forecasts about court proceedings
+        Call the Case publishes public opinion forecasts about court proceedings
         that are already the subject of extensive public reporting. We aim for
         the tone of sober court journalism — never entertainment built on
         someone else&apos;s worst day.
@@ -16,9 +16,9 @@ export default function EditorialPolicyPage() {
       <h2>Presumption of innocence</h2>
       <p>
         Every defendant is presumed innocent unless and until proven guilty in
-        a court of law. CaseCast never asserts guilt or innocence. Our
+        a court of law. Call the Case never asserts guilt or innocence. Our
         questions ask what a court <em>will decide</em>, not what a person{" "}
-        <em>did</em>. Percentages shown on CaseCast are aggregated reader
+        <em>did</em>. Percentages shown on Call the Case are aggregated reader
         predictions — they are not evidence, probability of guilt, or a
         statement about any person.
       </p>
@@ -64,7 +64,7 @@ export default function EditorialPolicyPage() {
 
       <h2>Comments &amp; discussion</h2>
       <p>
-        CaseCast does not host open, unmoderated comment sections. Discussion
+        Call the Case does not host open, unmoderated comment sections. Discussion
         shown on case pages is curated and moderated by our editors, and
         broader member discussion will only launch once we can moderate
         speculation about real people responsibly. Comments that assert guilt,

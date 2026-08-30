@@ -7,17 +7,17 @@ export default function TermsPage() {
   return (
     <LegalShell title="Terms of service" updated="August 30, 2026">
       <p>
-        Welcome to CaseCast. By using this site you agree to these terms. If
-        you do not agree, please do not use CaseCast.
+        Welcome to Call the Case. By using this site you agree to these terms. If
+        you do not agree, please do not use Call the Case.
       </p>
 
-      <h2>What CaseCast is</h2>
+      <h2>What Call the Case is</h2>
       <p>
-        CaseCast publishes neutral summaries of public court proceedings and
+        Call the Case publishes neutral summaries of public court proceedings and
         lets readers record a free, non-monetary prediction about the outcome.
         Aggregated predictions are opinion polling — they are not legal
         analysis, not advice, not evidence, and not statements of fact about
-        any person. CaseCast involves no wagering, stakes, odds, or prizes of
+        any person. Call the Case involves no wagering, stakes, odds, or prizes of
         monetary value.
       </p>
 
@@ -38,7 +38,7 @@ export default function TermsPage() {
       <h2>Membership</h2>
       <ul>
         <li>
-          CaseCast Membership costs $7.99 per month, billed via Stripe, and
+          Call the Case Membership costs $7.99 per month, billed via Stripe, and
           can be canceled anytime; access continues until the end of the paid
           period.
         </li>
@@ -47,7 +47,7 @@ export default function TermsPage() {
           votes are counted and grants no chance of winnings.
         </li>
         <li>
-          Donations described on our Impact page are made by CaseCast from its
+          Donations described on our Impact page are made by Call the Case from its
           revenue. Your membership payment is not a tax-deductible charitable
           contribution.
         </li>
@@ -63,15 +63,15 @@ export default function TermsPage() {
       <h2>Content</h2>
       <p>
         Case materials are provided for personal, non-commercial use.
-        CaseCast content is provided “as is” without warranties; court
+        Call the Case content is provided “as is” without warranties; court
         proceedings can change quickly and summaries may lag official events.
       </p>
 
       <h2>Liability</h2>
       <p>
-        To the maximum extent permitted by law, CaseCast is not liable for
+        To the maximum extent permitted by law, Call the Case is not liable for
         indirect or consequential damages arising from use of the service.
-        Nothing on CaseCast is a substitute for official court records.
+        Nothing on Call the Case is a substitute for official court records.
       </p>
 
       <h2>Changes</h2>

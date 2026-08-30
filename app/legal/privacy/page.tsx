@@ -7,7 +7,7 @@ export default function PrivacyPage() {
   return (
     <LegalShell title="Privacy policy" updated="August 30, 2026">
       <p>
-        CaseCast collects as little personal data as the product needs — and
+        Call the Case collects as little personal data as the product needs — and
         is built so that voting works without an account.
       </p>
 
@@ -55,10 +55,10 @@ export default function PrivacyPage() {
       <p>
         You can request access to or deletion of your account data at{" "}
         <a
-          href="mailto:privacy@casecast.app"
+          href="mailto:privacy@callthecase.com"
           className="underline underline-offset-2"
         >
-          privacy@casecast.app
+          privacy@callthecase.com
         </a>
         . Deleting your account removes your personal data; anonymized vote
         counts remain part of published aggregates.

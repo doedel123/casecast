@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Cases",
-  description: "All court cases currently covered on CaseCast.",
+  description: "All court cases currently covered on Call the Case.",
 };
 
 export default async function CasesPage() {

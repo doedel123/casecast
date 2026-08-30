@@ -84,7 +84,7 @@ export function DiscussionTeaser({
                 Join the discussion
               </Button>
               <p className="text-[11.5px] text-muted-foreground">
-                Discussion is part of CaseCast Membership.
+                Discussion is part of Call the Case Membership.
               </p>
             </>
           )}

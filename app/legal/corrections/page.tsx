@@ -30,12 +30,12 @@ export default function CorrectionsPage() {
 
       <h2>Report an error</h2>
       <p>
-        If you believe anything on CaseCast is inaccurate, email{" "}
+        If you believe anything on Call the Case is inaccurate, email{" "}
         <a
-          href="mailto:corrections@casecast.app"
+          href="mailto:corrections@callthecase.com"
           className="underline underline-offset-2"
         >
-          corrections@casecast.app
+          corrections@callthecase.com
         </a>{" "}
         with the case name and a source. We review every report.
       </p>

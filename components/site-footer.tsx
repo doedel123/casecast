@@ -56,8 +56,8 @@ export function SiteFooter() {
           </div>
         </div>
         <p className="mt-10 border-t border-border/60 pt-6 text-[12px] leading-relaxed text-muted-foreground">
-          © 2026 CaseCast. Every defendant is presumed innocent unless and
-          until proven guilty in a court of law. Predictions on CaseCast are
+          © 2026 Call the Case. Every defendant is presumed innocent unless and
+          until proven guilty in a court of law. Predictions on Call the Case are
           public opinion forecasts — not findings of guilt, legal conclusions,
           or statements about any person.
         </p>

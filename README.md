@@ -1,4 +1,4 @@
-# CaseCast
+# Call the Case
 
 A mobile-first platform for public opinion forecasts on high-profile court
 cases. Readers cast one free, irrevocable prediction per case, see the live
@@ -23,7 +23,7 @@ npm run dev
 
 The seed creates:
 
-- an **admin user** — `admin@casecast.local` (password printed to the
+- an **admin user** — `admin@callthecase.local` (password printed to the
   terminal; override with `ADMIN_EMAIL` / `ADMIN_PASSWORD` env vars),
 - the launch case *Commonwealth v. Lindsay Clancy* (open, featured,
   "Jury deliberating") with five verdict outcomes and sources,
@@ -112,8 +112,10 @@ config) and `case_follows` (member feature). Schema:
 
 ## Deploying
 
-The project is linked to Vercel (`casecast` on the `waterloosvercel` team)
-with Neon env vars already set for production/preview/development:
+Production runs at **callthecase.com**. The project is linked to Vercel
+(`casecast` on the `waterloosvercel` team) with Neon env vars already set for
+production/preview/development; pushes to `main` deploy production
+automatically. Manual deploys:
 
 ```bash
 vercel deploy          # preview
@@ -131,7 +133,9 @@ After the first deploy, add `STRIPE_WEBHOOK_SECRET` (webhook endpoint
   on every case; content notes for violence/children/mental illness.
 - Membership never weights votes and there are no prizes — stated on
   `/membership` and in the terms.
-- No comments at launch. Donation claims are concrete, configurable, and
-  reported on `/impact`; no tax-deductibility claims.
+- No open commenting: discussion on case pages is a curated, moderated
+  teaser (`case_comments`) with no public write path. Donation claims are
+  concrete, configurable, and reported on `/impact`; no tax-deductibility
+  claims.
 - The legal pages are solid MVP drafts — have counsel review before a real
   public launch.

@@ -12,7 +12,7 @@ export function MembershipCta({ donationLine }: { donationLine: string }) {
   return (
     <section className="animate-fade-up rounded-3xl border border-border/80 bg-card p-6 shadow-[var(--shadow-card)] md:p-7">
       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
-        CaseCast Membership
+        Call the Case Membership
       </p>
       <h2 className="mt-2 font-serif text-2xl leading-snug md:text-[1.75rem]">
         Follow the verdict. Track your predictions. Support a cause.

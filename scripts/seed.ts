@@ -22,7 +22,7 @@ if (!url) {
 const db = drizzle(neon(url), { schema });
 
 async function seedAdmin() {
-  const email = (process.env.ADMIN_EMAIL ?? "admin@casecast.local").toLowerCase();
+  const email = (process.env.ADMIN_EMAIL ?? "admin@callthecase.local").toLowerCase();
   const [existing] = await db
     .select({ id: schema.users.id })
     .from(schema.users)
@@ -37,7 +37,7 @@ async function seedAdmin() {
   await db.insert(schema.users).values({
     email,
     passwordHash: await hash(password, 10),
-    name: "CaseCast Admin",
+    name: "Call the Case Admin",
     role: "admin",
   });
   console.log("✓ Admin user created");
@@ -112,7 +112,7 @@ async function seedClancyCase() {
       summary:
         "Lindsay Clancy, a former labor-and-delivery nurse from Duxbury, Massachusetts, is charged with murder in the deaths of her three young children in January 2023. Prosecutors allege she strangled the children at the family's home. Her defense argues she was in a severe psychiatric crisis and lacked criminal responsibility. She has pleaded not guilty. After a multi-week trial in Plymouth County Superior Court, the jury began deliberating on August 27, 2026.",
       disclaimer:
-        "Lindsay Clancy has pleaded not guilty. Her defense argues that she lacked criminal responsibility at the time of the alleged offenses. CaseCast predictions are public opinion forecasts, not findings of guilt.",
+        "Lindsay Clancy has pleaded not guilty. Her defense argues that she lacked criminal responsibility at the time of the alleged offenses. Call the Case predictions are public opinion forecasts, not findings of guilt.",
       contentWarning:
         "This case involves the deaths of children and discussion of mental illness.",
       heroImagePath: "/images/hero-clancy.jpg",
