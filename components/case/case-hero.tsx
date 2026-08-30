@@ -27,7 +27,7 @@ export function CaseHero({
           className="object-cover"
         />
         <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/25 to-transparent" />
-        <Badge className="absolute left-4 top-4 rounded-full border-0 bg-foreground/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-background backdrop-blur">
+        <Badge className="absolute left-4 top-4 rounded-full border-0 bg-card/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-foreground shadow-sm backdrop-blur">
           {caseRow.categoryLabel}
         </Badge>
       </div>
