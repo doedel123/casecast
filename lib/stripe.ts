@@ -79,6 +79,31 @@ function periodEnd(sub: Stripe.Subscription): Date | null {
   return ts ? new Date(ts * 1000) : null;
 }
 
+/**
+ * Pulls a user's subscriptions straight from Stripe and mirrors them into the
+ * database. Fallback for the moment right after checkout, when the webhook
+ * may not have arrived yet.
+ */
+export async function syncSubscriptionsForUser(userId: string) {
+  if (!stripeConfigured()) return;
+  const db = getDb();
+  const [user] = await db
+    .select({ stripeCustomerId: schema.users.stripeCustomerId })
+    .from(schema.users)
+    .where(eq(schema.users.id, userId))
+    .limit(1);
+  if (!user?.stripeCustomerId) return;
+  const stripe = getStripe();
+  const subs = await stripe.subscriptions.list({
+    customer: user.stripeCustomerId,
+    status: "all",
+    limit: 5,
+  });
+  for (const sub of subs.data) {
+    await syncSubscription(sub);
+  }
+}
+
 export async function syncSubscription(sub: Stripe.Subscription) {
   const db = getDb();
   const customerId =

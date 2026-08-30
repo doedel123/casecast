@@ -1,5 +1,6 @@
 import { Lock } from "lucide-react";
 import { CaseHero } from "@/components/case/case-hero";
+import { DiscussionTeaser } from "@/components/case/discussion-teaser";
 import { FollowButton } from "@/components/case/follow-button";
 import { ResultsPanel } from "@/components/case/results-panel";
 import { VotePanel } from "@/components/case/vote-panel";
@@ -9,6 +10,7 @@ import type { Case } from "@/lib/db/schema";
 import { formatDate } from "@/lib/format";
 import {
   getActiveCharity,
+  getCaseComments,
   getCaseOutcomes,
   getCaseSources,
   getDonationSettings,
@@ -33,7 +35,7 @@ export async function CaseExperience({
   showMembershipCta?: boolean;
 }) {
   const viewer = await getViewer();
-  const [outcomes, sources, viewerVote, resolution, member, followedIds] =
+  const [outcomes, sources, viewerVote, resolution, member, followedIds, comments] =
     await Promise.all([
       getCaseOutcomes(caseRow.id),
       getCaseSources(caseRow.id),
@@ -41,6 +43,7 @@ export async function CaseExperience({
       getResolution(caseRow.id),
       isMember(viewer.userId),
       getFollowedCaseIds(viewer.userId),
+      getCaseComments(caseRow.id),
     ]);
 
   const hasVoted = Boolean(viewerVote);
@@ -132,6 +135,8 @@ export async function CaseExperience({
           </div>
         )}
       </section>
+
+      <DiscussionTeaser comments={comments} isMember={member} />
 
       {hasVoted && showMembershipCta && !member && donation && (
         <MembershipCta

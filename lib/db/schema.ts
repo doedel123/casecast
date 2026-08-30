@@ -270,6 +270,25 @@ export const caseFollows = pgTable(
   (t) => [uniqueIndex("case_follows_user_case_unique").on(t.userId, t.caseId)],
 );
 
+// Curated, admin-managed discussion entries shown as a teaser on case pages.
+// There is no public write path — open commenting stays off per editorial policy.
+export const caseComments = pgTable(
+  "case_comments",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    caseId: uuid("case_id")
+      .notNull()
+      .references(() => cases.id, { onDelete: "cascade" }),
+    authorName: text("author_name").notNull(),
+    body: text("body").notNull(),
+    isPublished: boolean("is_published").notNull().default(true),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (t) => [index("case_comments_case_idx").on(t.caseId)],
+);
+
 export type User = typeof users.$inferSelect;
 export type Case = typeof cases.$inferSelect;
 export type CaseOutcome = typeof caseOutcomes.$inferSelect;

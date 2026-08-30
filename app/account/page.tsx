@@ -23,7 +23,7 @@ import {
   getSubscription,
   isMember,
 } from "@/lib/queries";
-import { stripeConfigured } from "@/lib/stripe";
+import { stripeConfigured, syncSubscriptionsForUser } from "@/lib/stripe";
 
 export const dynamic = "force-dynamic";
 
@@ -37,6 +37,16 @@ export default async function AccountPage({
   const [{ welcome }, session] = await Promise.all([searchParams, auth()]);
   if (!session?.user) redirect("/signin?next=/account");
   const user = session.user;
+
+  if (welcome === "1") {
+    // Right after checkout the webhook may not have landed yet — pull the
+    // subscription straight from Stripe so the member sees their status.
+    try {
+      await syncSubscriptionsForUser(user.id);
+    } catch {
+      // Non-fatal: the webhook will reconcile.
+    }
+  }
 
   const [member, subscription, history] = await Promise.all([
     isMember(user.id),

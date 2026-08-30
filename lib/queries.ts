@@ -13,6 +13,7 @@ const {
   caseOutcomes,
   caseSources,
   caseResolutions,
+  caseComments,
   caseFollows,
   votes,
   subscriptions,
@@ -76,6 +77,17 @@ export async function getCaseSources(caseId: string) {
     .from(caseSources)
     .where(eq(caseSources.caseId, caseId))
     .orderBy(asc(caseSources.sortOrder));
+}
+
+export async function getCaseComments(caseId: string, limit = 5) {
+  return getDb()
+    .select()
+    .from(caseComments)
+    .where(
+      and(eq(caseComments.caseId, caseId), eq(caseComments.isPublished, true)),
+    )
+    .orderBy(desc(caseComments.createdAt))
+    .limit(limit);
 }
 
 export async function getResolution(caseId: string) {

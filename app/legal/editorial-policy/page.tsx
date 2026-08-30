@@ -62,10 +62,13 @@ export default function EditorialPolicyPage() {
         returned controls. Resolutions and any later changes are logged.
       </p>
 
-      <h2>No comments — for now</h2>
+      <h2>Comments &amp; discussion</h2>
       <p>
-        CaseCast deliberately launches without comment sections to avoid
-        speculation about real people that we cannot responsibly moderate.
+        CaseCast does not host open, unmoderated comment sections. Discussion
+        shown on case pages is curated and moderated by our editors, and
+        broader member discussion will only launch once we can moderate
+        speculation about real people responsibly. Comments that assert guilt,
+        attack participants, or introduce unverified claims are not published.
       </p>
 
       <h2>Fair play</h2>
