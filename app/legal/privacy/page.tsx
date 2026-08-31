@@ -40,7 +40,12 @@ export default function PrivacyPage() {
 
       <h2>What we don&apos;t do</h2>
       <ul>
-        <li>No sale of personal data, no advertising trackers.</li>
+        <li>
+          No sale of personal data and no advertising or cross-site trackers.
+          We use Google Analytics 4 solely to understand aggregate usage —
+          pages visited, approximate region, device type. GA4 does not store
+          full IP addresses, and we do not connect it to advertising features.
+        </li>
         <li>No public display of who voted for what — results are aggregates.</li>
       </ul>
 
@@ -66,9 +71,10 @@ export default function PrivacyPage() {
 
       <h2>Processors</h2>
       <p>
-        We use Vercel (hosting), Neon (database), Stripe (payments), and
-        Cloudflare Turnstile (bot protection). Each receives only what it
-        needs to provide its service.
+        We use Vercel (hosting), Neon (database), Stripe (payments),
+        Cloudflare Turnstile (bot protection), and Google Analytics
+        (aggregate usage statistics). Each receives only what it needs to
+        provide its service.
       </p>
     </LegalShell>
   );
